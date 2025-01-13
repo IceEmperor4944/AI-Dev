@@ -5,7 +5,7 @@
 #include <SDL.h>
 
 int main(int, char**) {
-	auto scene = std::make_unique<GOLScene>();
+	auto scene = std::make_unique<CAScene>();
 
 	scene->Initialize();
 	while (!scene->IsQuit()) {

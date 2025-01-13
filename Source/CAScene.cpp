@@ -22,7 +22,7 @@ void CAScene::Update() {
 
     m_cells->Write(m_cells->m_width / 2, 0, 1);
 
-    int rule = 99;
+    int rule = 30;
     for (int y = 0; y < m_cells->m_height - 1; y++)
     {
         for (int x = 1; x < m_cells->m_width - 1; x++)
@@ -33,7 +33,7 @@ void CAScene::Update() {
             i |= m_cells->Read(x - 1, y) << 2;
             i |= m_cells->Read(x + 1, y);
 
-            uint8_t state = (rule & 1 << i);
+            uint8_t state = (rule & 1 << i) ? 1 : 0;
             m_cells->Write(x, y + 1, state);
         }
     }
